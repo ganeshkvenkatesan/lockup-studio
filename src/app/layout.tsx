@@ -15,11 +15,44 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lockup Studio",
-  description: "A modern design studio",
+  description: "A modern design studio crafting digital experiences",
+  metadataBase: new URL('https://lockupstudio.com/'),
+  openGraph: {
+    title: 'Lockup Studio',
+    description: 'A modern design studio crafting digital experiences',
+    url: 'https://lockupstudio.com',
+    siteName: 'Lockup Studio',
+    locale: 'en_US',
+    type: 'website',
+    images: [{
+    url: '/lockupstudio_logo.jpeg',
+    width: 1200,
+    height: 630,
+    alt: 'Lockup Studio',
+  }]
+  },
+  twitter: {
+    title: 'Lockup Studio',
+    description: 'A modern design studio crafting digital experiences',
+    card: 'summary_large_image',
+    images: '/lockupstudio_logo.jpeg',
+  },
+  verification: {
+    google: 'google-site-verification=Ev2PVaQEKJtbgNFvewqzpDibwqcXg8oLgMz84p_7S1Q',
+  },
+  alternates: {
+    canonical: '/',
+  },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16,32x32,48x48' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    apple: [
+      { url: '/apple-icon-180.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 };
 
