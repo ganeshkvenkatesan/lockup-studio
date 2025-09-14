@@ -24,7 +24,7 @@ export default function ThemeToggleButton() {
     springConfig: { mass: 4, tension: 250, friction: 35 },
   };
 
-  const { r, transform, cx, cy, opacity } =
+  const { r, cx, cy, opacity } =
     properties[theme === 'light' ? 'sun' : 'moon'];
 
   const svgContainerProps = useSpring({
