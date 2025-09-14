@@ -14,6 +14,15 @@ pnpm dev
 bun dev
 ```
 
+## S3 cache & environment
+
+- The app uses a server-side in-memory cache of S3 listings and presigned URLs. The cache is initialized on first call to `/api/list-images` and refreshed periodically before presign expiration.
+- Environment variables used:
+	- `S3_BUCKET` or `NEXT_PUBLIC_S3_BUCKET` — the S3 bucket name.
+	- `S3_ENDPOINT` (optional) — custom S3-compatible endpoint. The server will retry without this endpoint if DNS fails.
+	- `PRESIGN_EXPIRATION` (optional) — presigned URL expiry in seconds (default 900).
+
+If you want the listing available at build time, add a build-step to fetch and embed the manifest; currently the server cache is populated on first runtime request.
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

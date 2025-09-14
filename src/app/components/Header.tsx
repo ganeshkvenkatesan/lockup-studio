@@ -11,7 +11,7 @@ export default function Header() {
   const aboutHoverColor = theme === 'light' ? 'hover:text-gray-900' : 'hover:text-white';
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent z-50">
+    <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md ${theme === 'light' ? 'bg-white/90' : 'bg-black/90'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="/">
